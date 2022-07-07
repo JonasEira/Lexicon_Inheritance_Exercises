@@ -31,7 +31,23 @@ public class Main {
         // Not loanable
         System.out.println("Not loanable:");
         for(Book b : books){
-            if(b.getCategory() == Category.NOT_LOANABLE){
+            if(!(b instanceof Loanable)){
+                System.out.println(b.getTitle());
+            }
+        }
+
+        // Child book filter
+        System.out.println("Child book:");
+        for(Book b : books){
+            if(b.getCategory() == Category.CHILD){
+                System.out.println(b.getTitle());
+            }
+        }
+
+        // Adult book filter
+        System.out.println("Adult book:");
+        for(Book b : books){
+            if(b.getCategory() == Category.ADULT){
                 System.out.println(b.getTitle());
             }
         }
